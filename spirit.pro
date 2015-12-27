@@ -11,4 +11,5 @@ RESOURCES += \
 
 DISTFILES += \
     src/qml/main.qml \
-    README.md
+    README.md \
+    src/qml/main/MainMenu.qml
