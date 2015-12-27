@@ -10,7 +10,8 @@ RESOURCES += \
     src/spirit.qrc
 
 DISTFILES += \
-    src/qml/main.qml \
     README.md \
+    src/qml/main.qml \
     src/qml/main/MainMenu.qml \
-    src/js/utils.js
+    src/js/utils.js \
+    src/qml/main/About.qml
