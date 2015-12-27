@@ -5,3 +5,9 @@ TEMPLATE = app
 
 SOURCES += \
     src/cpp/main.cpp
+
+RESOURCES += \
+    src/spirit.qrc
+
+DISTFILES += \
+    src/qml/main.qml
