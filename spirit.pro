@@ -10,4 +10,5 @@ RESOURCES += \
     src/spirit.qrc
 
 DISTFILES += \
-    src/qml/main.qml
+    src/qml/main.qml \
+    README.md
