@@ -17,7 +17,8 @@ DISTFILES += \
     src/qml/main/MainMenu.qml \
     src/js/utils.js \
     src/qml/main/About.qml \
-    src/qml/components/ButtonBase.qml
+    src/qml/components/ButtonBase.qml \
+    src/qml/components/WindowDialog.qml
 
 HEADERS += \
     src/cpp/base/core.h \
