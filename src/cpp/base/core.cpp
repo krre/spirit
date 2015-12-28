@@ -17,6 +17,12 @@ bool Core::isFileExists(const QString& filePath)
     return checkFile.exists() && checkFile.isFile();
 }
 
+bool Core::isDirectoryExists(const QString &dirPath)
+{
+    QDir dir(dirPath);
+    return dir.exists();
+}
+
 bool Core::removeFile(const QString& filePath)
 {
     return QFile::remove(filePath);

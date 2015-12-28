@@ -59,6 +59,8 @@ Window {
                     root.accepted()
                     if (!stayOnScreen) {
                         root.destroy()
+                    } else {
+                        stayOnScreen = false
                     }
                 }
             }

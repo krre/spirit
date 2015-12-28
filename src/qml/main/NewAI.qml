@@ -12,18 +12,12 @@ WindowDialog {
     height: 200
 
     onAccepted: {
-        var filePath = Settings.value("Path", "workspace") + "/" + name.text
-        if (Core.isFileExists(filePath)) {
+        var dirPath = Settings.value("Path", "workspace") + "/" + name.text
+        if (Core.isDirectoryExists(dirPath)) {
+            Dialog.errorMessage(qsTr(String("Directory %1 is exists").arg(dirPath)))
             stayOnScreen = true
-            var warningDialog = Dialog.warningMessage(qsTr("File is exists. Overwrite?"))
-            warningDialog.yes.connect(function() {
-                Core.removeFile(filePath)
-                Utils.createAI(filePath)
-                stayOnScreen = false
-            })
         } else {
-            stayOnScreen = false
-            Utils.createAI(filePath)
+            Utils.createAI(dirPath)
         }
     }
 

@@ -8,10 +8,11 @@ function createDynamicObject(parent, url, properties) {
     }
 }
 
-function createAI(filePath) {
-    print("Create AI", filePath)
+function createAI(dirPath) {
+    print("Create AI", dirPath)
+    Core.mkpath(dirPath)
 }
 
-function openAI(filePath) {
-    print("Open AI", filePath)
+function openAI(dirPath) {
+    print("Open AI", dirPath)
 }

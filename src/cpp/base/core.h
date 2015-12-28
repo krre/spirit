@@ -19,6 +19,7 @@ public:
     Q_INVOKABLE QString pathToBaseName(const QString& path);
     static QString homePath() { return QStandardPaths::writableLocation(QStandardPaths::HomeLocation); }
     Q_INVOKABLE bool isFileExists(const QString& filePath);
+    Q_INVOKABLE bool isDirectoryExists(const QString& dirPath);
     Q_INVOKABLE bool removeFile(const QString& filePath);
     Q_INVOKABLE QChar separator() { return QDir::separator(); }
     Q_INVOKABLE void mkpath(const QString& dirPath);
