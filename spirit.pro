@@ -24,7 +24,12 @@ DISTFILES += \
     src/qml/main/Options.qml \
     src/qml/components/filedialog/FileDialogBase.qml \
     src/qml/components/filedialog/FileDialogDirectory.qml \
-    src/qml/components/filedialog/FileDialogOpen.qml
+    src/qml/components/filedialog/FileDialogOpen.qml \
+    src/qml/components/messagedialog/MessageDialogBase.qml \
+    src/qml/components/messagedialog/MessageDialogError.qml \
+    src/qml/components/messagedialog/MessageDialogInformation.qml \
+    src/qml/components/messagedialog/MessageDialogQuestion.qml \
+    src/qml/components/messagedialog/MessageDialogWarning.qml
 
 HEADERS += \
     src/cpp/base/core.h \
