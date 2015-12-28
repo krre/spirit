@@ -1,6 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 1.5
 import "../../js/utils.js" as Utils
+import "../../js/dialog.js" as Dialog
 
 MenuBar {
     property alias recentFilesModel: recentFilesModel
@@ -17,6 +18,12 @@ MenuBar {
         MenuItem {
             text: qsTr("Open...")
             shortcut: "Ctrl+O"
+            onTriggered: {
+                var selectFileDialog = Dialog.selectFile(mainRoot)
+                selectFileDialog.accepted.connect(function() {
+                    Utils.openAI(Core.urlToPath(selectFileDialog.fileUrl))
+                })
+            }
         }
 
         Menu {
@@ -29,7 +36,7 @@ MenuBar {
 
                 MenuItem {
                     text: model.filePath
-                    onTriggered: Utils.openOra(text)
+                    onTriggered: Utils.openAI(text)
                 }
 
                 onObjectAdded: recentFilesMenu.insertItem(index, object)

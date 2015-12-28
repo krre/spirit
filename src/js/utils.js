@@ -7,3 +7,11 @@ function createDynamicObject(parent, url, properties) {
         return component.createObject(parent, properties || {})
     }
 }
+
+function createAI(filePath) {
+    print("Create AI", filePath)
+}
+
+function openAI(filePath) {
+    print("Open AI", filePath)
+}

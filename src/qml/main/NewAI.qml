@@ -3,6 +3,7 @@ import QtQuick.Controls 1.5
 import QtQuick.Layouts 1.2
 import "../components"
 import "../../js/dialog.js" as Dialog
+import "../../js/utils.js" as Utils
 
 WindowDialog {
     id: root
@@ -22,12 +23,12 @@ WindowDialog {
                 var warningDialog = Dialog.warningMessage(qsTr("File is exists. Overwrite?"))
                 warningDialog.yes.connect(function() {
                     Core.removeFile(filePath)
-                    print("Create", name.text)
-                    root.destroy()
+                    Utils.createAI(filePath)
+                    stayOnScreen = false
                 })
             } else {
-                print("Create", name.text)
-                root.destroy()
+                stayOnScreen = false
+                Utils.createAI(filePath)
             }
         }
     }
