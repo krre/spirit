@@ -21,7 +21,10 @@ DISTFILES += \
     src/qml/components/WindowDialog.qml \
     src/qml/main/NewAI.qml \
     src/qml/components/BrowseButton.qml \
-    src/qml/main/Options.qml
+    src/qml/main/Options.qml \
+    src/qml/components/filedialog/FileDialogBase.qml \
+    src/qml/components/filedialog/FileDialogDirectory.qml \
+    src/qml/components/filedialog/FileDialogOpen.qml
 
 HEADERS += \
     src/cpp/base/core.h \
