@@ -1,9 +1,12 @@
 #include "settings.h"
+#include "core.h"
 
 Settings::Settings(const QString& filePath)
 {
     settings = new QSettings(filePath, QSettings::IniFormat, this);
     settings->setIniCodec("UTF-8");
+
+    setupWorkspace();
 }
 
 void Settings::setValue(const QString& group, const QString& key, const QVariant& value)
@@ -64,4 +67,14 @@ QStringList Settings::list(const QString& group)
     settings->endGroup();
 
     return list;
+}
+
+void Settings::setupWorkspace()
+{
+    if (value("Path", "workspace").isNull()) {
+        QString workspacePath = Core::homePath() + QDir::separator() + "spirit";
+        QDir dir;
+        dir.mkpath(workspacePath);
+        setValue("Path", "workspace", workspacePath);
+    }
 }
