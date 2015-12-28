@@ -7,6 +7,7 @@ class Core : public QObject
     Q_PROPERTY(QString buildDate READ buildDate CONSTANT)
     Q_PROPERTY(QString qtVersion READ qtVersion CONSTANT)
     Q_PROPERTY(QString homePath READ homePath CONSTANT)
+    Q_PROPERTY(QChar separator READ separator CONSTANT)
 
 public:
     explicit Core(QObject* parent = 0);
@@ -19,5 +20,6 @@ public:
     QString homePath() { return QStandardPaths::writableLocation(QStandardPaths::HomeLocation); }
     Q_INVOKABLE bool isFileExists(const QString& filePath);
     Q_INVOKABLE bool removeFile(const QString& filePath);
+    Q_INVOKABLE QChar separator() { return QDir::separator(); }
 
 };
