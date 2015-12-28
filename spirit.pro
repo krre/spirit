@@ -18,7 +18,8 @@ DISTFILES += \
     src/js/utils.js \
     src/qml/main/About.qml \
     src/qml/components/ButtonBase.qml \
-    src/qml/components/WindowDialog.qml
+    src/qml/components/WindowDialog.qml \
+    src/qml/main/NewAI.qml
 
 HEADERS += \
     src/cpp/base/core.h \
