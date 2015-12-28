@@ -21,3 +21,8 @@ bool Core::removeFile(const QString& filePath)
 {
     return QFile::remove(filePath);
 }
+
+void Core::mkpath(const QString &dirPath) {
+    QDir dir;
+    dir.mkpath(dirPath);
+}

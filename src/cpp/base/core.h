@@ -21,5 +21,6 @@ public:
     Q_INVOKABLE bool isFileExists(const QString& filePath);
     Q_INVOKABLE bool removeFile(const QString& filePath);
     Q_INVOKABLE QChar separator() { return QDir::separator(); }
+    Q_INVOKABLE void mkpath(const QString& dirPath);
 
 };

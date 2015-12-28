@@ -3,6 +3,7 @@ import QtQuick.Controls 1.5
 import QtQuick.Layouts 1.2
 import QtQuick.Window 2.2
 import "../components"
+import "../../js/dialog.js" as Dialog
 
 WindowDialog {
     id: root
@@ -11,6 +12,7 @@ WindowDialog {
     height: 200
 
     onAccepted: {
+        Core.mkpath(workspacePath.text)
         Settings.setValue("Path", "workspace", workspacePath.text)
     }
 
@@ -40,7 +42,7 @@ WindowDialog {
                     onClicked: {
                         var selectDirectoryDialog = Dialog.selectDirectory(root)
                         selectDirectoryDialog.accepted.connect(function() {
-                            workspacePath.text = UTILS.urlToPath(selectDirectoryDialog.fileUrl)
+                            workspacePath.text = Core.urlToPath(selectDirectoryDialog.fileUrl)
                         })
                     }
                 }
