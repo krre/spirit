@@ -46,5 +46,13 @@ WindowDialog {
             Layout.fillWidth: true
             Component.onCompleted: forceActiveFocus()
         }
+
+        Label {
+            text: qsTr("Workspace:")
+        }
+
+        Label {
+            text: Settings.value("Path", "workspace")
+        }
     }
 }
