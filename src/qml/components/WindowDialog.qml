@@ -9,6 +9,7 @@ Window {
     property real indent: 10
     property int standardButtons: StandardButton.Ok | StandardButton.Cancel
     property bool stayOnScreen: false
+    property alias okButton: okButton
     id: root
     width: 500
     height: 500
@@ -50,6 +51,7 @@ Window {
             Layout.alignment: Qt.AlignHCenter
 
             ButtonBase {
+                id: okButton
                 text: qsTr("OK")
                 visible: (StandardButton.Ok & standardButtons) === StandardButton.Ok
                 isDefault: activeFocus || activeFocusItem && activeFocusItem.objectName !== "ButtonBase"

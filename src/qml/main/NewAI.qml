@@ -12,26 +12,22 @@ WindowDialog {
     height: 200
 
     onAccepted: {
-        if (!name.text) {
+        var filePath = Settings.value("Path", "workspace") + "/" + name.text
+        if (Core.isFileExists(filePath)) {
             stayOnScreen = true
-            Dialog.errorMessage(qsTr("Name is empty"))
-            name.forceActiveFocus()
-        } else {
-            var filePath = Settings.value("Path", "workspace") + "/" + name.text
-            if (Core.isFileExists(filePath)) {
-                stayOnScreen = true
-                var warningDialog = Dialog.warningMessage(qsTr("File is exists. Overwrite?"))
-                warningDialog.yes.connect(function() {
-                    Core.removeFile(filePath)
-                    Utils.createAI(filePath)
-                    stayOnScreen = false
-                })
-            } else {
-                stayOnScreen = false
+            var warningDialog = Dialog.warningMessage(qsTr("File is exists. Overwrite?"))
+            warningDialog.yes.connect(function() {
+                Core.removeFile(filePath)
                 Utils.createAI(filePath)
-            }
+                stayOnScreen = false
+            })
+        } else {
+            stayOnScreen = false
+            Utils.createAI(filePath)
         }
     }
+
+    okButton.enabled: name.text
 
     GridLayout {
         width: parent.width
