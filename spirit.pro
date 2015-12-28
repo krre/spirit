@@ -5,7 +5,8 @@ TEMPLATE = app
 
 SOURCES += \
     src/cpp/main.cpp \
-    src/cpp/base/core.cpp
+    src/cpp/base/core.cpp \
+    src/cpp/base/settings.cpp
 
 RESOURCES += \
     src/spirit.qrc
@@ -18,4 +19,5 @@ DISTFILES += \
     src/qml/main/About.qml
 
 HEADERS += \
-    src/cpp/base/core.h
+    src/cpp/base/core.h \
+    src/cpp/base/settings.h
