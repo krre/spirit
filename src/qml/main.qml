@@ -13,12 +13,29 @@ ApplicationWindow {
     menuBar: MainMenu {}
 
     Component.onCompleted: {
-        if (Screen.width && Screen.height) {
-            x = (Screen.width - width) / 2
-            y = (Screen.height - height) / 2
+        var geometry = Settings.map("MainWindow")
+        if (Object.keys(geometry).length) {
+            x = geometry.x
+            y = geometry.y
+            width = geometry.width
+            height = geometry.height
         } else {
-            x = 200
-            y = 200
+            if (Screen.width && Screen.height) {
+                x = (Screen.width - width) / 2
+                y = (Screen.height - height) / 2
+            } else {
+                x = 200
+                y = 200
+            }
         }
+    }
+
+    onClosing: {
+        var geometry = {}
+        geometry.x = x
+        geometry.y = y
+        geometry.width = width
+        geometry.height = height
+        Settings.setMap("MainWindow", geometry)
     }
 }
