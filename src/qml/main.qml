@@ -11,4 +11,14 @@ ApplicationWindow {
     height: 600
     visible: true
     menuBar: MainMenu {}
+
+    Component.onCompleted: {
+        if (Screen.width && Screen.height) {
+            x = (Screen.width - width) / 2
+            y = (Screen.height - height) / 2
+        } else {
+            x = 200
+            y = 200
+        }
+    }
 }
