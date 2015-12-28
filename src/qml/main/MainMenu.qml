@@ -71,6 +71,7 @@ MenuBar {
 
         MenuItem {
             text: qsTr("Options...")
+            onTriggered: Utils.createDynamicObject(mainRoot, "qrc:/qml/main/Options.qml")
         }
     }
 

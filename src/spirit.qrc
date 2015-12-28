@@ -8,5 +8,6 @@
         <file>qml/components/WindowDialog.qml</file>
         <file>qml/main/NewAI.qml</file>
         <file>qml/components/BrowseButton.qml</file>
+        <file>qml/main/Options.qml</file>
     </qresource>
 </RCC>

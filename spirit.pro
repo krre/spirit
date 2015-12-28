@@ -20,7 +20,8 @@ DISTFILES += \
     src/qml/components/ButtonBase.qml \
     src/qml/components/WindowDialog.qml \
     src/qml/main/NewAI.qml \
-    src/qml/components/BrowseButton.qml
+    src/qml/components/BrowseButton.qml \
+    src/qml/main/Options.qml
 
 HEADERS += \
     src/cpp/base/core.h \
