@@ -4,5 +4,6 @@
         <file>qml/main/MainMenu.qml</file>
         <file>js/utils.js</file>
         <file>qml/main/About.qml</file>
+        <file>qml/components/ButtonBase.qml</file>
     </qresource>
 </RCC>
