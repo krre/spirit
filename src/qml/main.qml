@@ -3,6 +3,7 @@ import QtQuick.Controls 1.5
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 import "main"
+import "../js/utils.js" as Utils
 
 ApplicationWindow {
     id: mainRoot
@@ -10,7 +11,7 @@ ApplicationWindow {
     width: 800
     height: 600
     visible: true
-    menuBar: MainMenu {}
+    menuBar: MainMenu { id: mainMenu }
 
     Component.onCompleted: {
         var geometry = Settings.map("MainWindow")
@@ -28,6 +29,8 @@ ApplicationWindow {
                 y = 200
             }
         }
+
+        Utils.loadRecentFiles()
     }
 
     onClosing: {
@@ -37,5 +40,7 @@ ApplicationWindow {
         geometry.width = width
         geometry.height = height
         Settings.setMap("MainWindow", geometry)
+
+        Utils.saveRecentFiles()
     }
 }

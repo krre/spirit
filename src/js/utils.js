@@ -9,12 +9,51 @@ function createDynamicObject(parent, url, properties) {
 }
 
 function createAI(dirPath) {
-    print("Create AI", dirPath)
     Core.mkpath(dirPath + "/log") // create work dir and log dir simultaneously
     var name = Core.pathToBaseName(dirPath)
-    Storage.create(dirPath + "/" + name + ".spirit")
+    var spiritPath = dirPath + "/" + name + ".spirit"
+    Storage.create(spiritPath)
+    addRecentFile(spiritPath)
 }
 
-function openAI(dirPath) {
-    print("Open AI", dirPath)
+function openAI(filePath) {
+    addRecentFile(filePath)
+}
+
+function addRecentFile(path) {
+    var model = mainMenu.recentFilesModel
+    // Prevention of duplication of filePath and raising it on top.
+    for (var i = 0; i < model.count; i++) {
+        if (model.get(i).filePath === path) {
+            model.remove(i)
+        }
+    }
+    model.insert(0, { filePath: path })
+    var maxRecentFiles = 10
+    if (model.count === maxRecentFiles + 1) {
+        model.remove(maxRecentFiles)
+    }
+}
+
+function saveRecentFiles() {
+    var model = mainMenu.recentFilesModel
+    var list = []
+    for (var i = 0; i < model.count; i++) {
+        var path = model.get(i).filePath
+        if (path) {
+            list.push(path)
+        }
+    }
+    Settings.setList("RecentFiles", list)
+}
+
+function loadRecentFiles() {
+    var list = Settings.list("RecentFiles")
+    var model = mainMenu.recentFilesModel
+    for (var i = 0; i < list.length; i++) {
+        var path = list[i]
+        if (Core.isFileExists(path)) {
+            model.append({ filePath: path })
+        }
+    }
 }
