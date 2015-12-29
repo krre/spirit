@@ -10,7 +10,7 @@ function createDynamicObject(parent, url, properties) {
 
 function createAI(dirPath) {
     print("Create AI", dirPath)
-    Core.mkpath(dirPath)
+    Core.mkpath(dirPath + "/log") // create work dir and log dir simultaneously
 }
 
 function openAI(dirPath) {
