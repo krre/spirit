@@ -7,7 +7,8 @@ import "../js/utils.js" as Utils
 
 ApplicationWindow {
     id: mainRoot
-    title: Qt.application.name
+    property string name
+    title: Qt.application.name + (name ? " - " + name : "")
     width: 800
     height: 600
     visible: true

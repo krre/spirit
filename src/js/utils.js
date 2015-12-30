@@ -14,9 +14,11 @@ function createAI(dirPath) {
     var spiritPath = dirPath + "/" + name + ".spirit"
     Storage.create(spiritPath)
     addRecentFile(spiritPath)
+    mainRoot.name = name
 }
 
 function openAI(filePath) {
+    mainRoot.name = Core.pathToBaseName(filePath)
     addRecentFile(filePath)
 }
 
