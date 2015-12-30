@@ -75,6 +75,17 @@ MenuBar {
     }
 
     Menu {
+        title: qsTr("View")
+
+        MenuItem {
+            text: qsTr("Full Screen")
+            shortcut: "F11"
+            checkable: true
+            onTriggered: checked ? mainRoot.showFullScreen() : mainRoot.showNormal()
+        }
+    }
+
+    Menu {
         title: qsTr("Tools")
 
         MenuItem {
