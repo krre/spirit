@@ -18,5 +18,6 @@
         <file>qml/components/messagedialog/MessageDialogQuestion.qml</file>
         <file>qml/components/messagedialog/MessageDialogWarning.qml</file>
         <file>js/dialog.js</file>
+        <file>qml/main/WorkArea.qml</file>
     </qresource>
 </RCC>

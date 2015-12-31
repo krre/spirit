@@ -44,4 +44,9 @@ ApplicationWindow {
 
         Utils.saveRecentFiles()
     }
+
+    WorkArea {
+        anchors.fill: parent
+        visible: name
+    }
 }
