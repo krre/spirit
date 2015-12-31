@@ -61,4 +61,14 @@ ApplicationWindow {
         anchors.fill: parent
         visible: name
     }
+
+    Console {
+        id: consoleAI
+        visible: mainMenu.consoleAI.checked
+        onVisibleChanged: {
+            if (!visible) {
+                mainMenu.consoleAI.checked = false
+            }
+        }
+    }
 }

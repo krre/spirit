@@ -5,6 +5,7 @@ import "../../js/dialog.js" as Dialog
 
 MenuBar {
     property alias recentFilesModel: recentFilesModel
+    property alias consoleAI: consoleAI
 
     Menu {
         title: qsTr("File")
@@ -76,6 +77,13 @@ MenuBar {
 
     Menu {
         title: qsTr("View")
+
+        MenuItem {
+            id: consoleAI
+            text: qsTr("Console")
+            shortcut: "Tab"
+            checkable: true
+        }
 
         MenuItem {
             text: qsTr("Full Screen")

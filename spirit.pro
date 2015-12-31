@@ -32,7 +32,8 @@ DISTFILES += \
     src/qml/components/messagedialog/MessageDialogQuestion.qml \
     src/qml/components/messagedialog/MessageDialogWarning.qml \
     src/js/dialog.js \
-    src/qml/main/WorkArea.qml
+    src/qml/main/WorkArea.qml \
+    src/qml/main/Console.qml
 
 HEADERS += \
     src/cpp/base/core.h \
