@@ -72,7 +72,7 @@ QStringList Settings::list(const QString& group)
 void Settings::setupWorkspace()
 {
     if (value("Path", "workspace").isNull()) {
-        QString workspacePath = Core::homePath() + QDir::separator() + "spirit";
+        QString workspacePath = Core::homePath() + "/spirit";
         QDir dir;
         dir.mkpath(workspacePath);
         setValue("Path", "workspace", workspacePath);

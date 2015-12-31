@@ -1,5 +1,7 @@
 import QtQuick 2.6
 
 Rectangle {
-    color: "blue"
+    property string name
+    property string workFilePath
+    color: "gray"
 }

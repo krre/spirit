@@ -62,7 +62,7 @@ MenuBar {
         MenuItem {
             text: qsTr("Close")
             shortcut: "Ctrl+W"
-            onTriggered: mainRoot.name = ""
+            onTriggered: Utils.closeAI()
         }
 
         MenuSeparator {}

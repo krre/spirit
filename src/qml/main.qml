@@ -8,7 +8,7 @@ import "../js/utils.js" as Utils
 ApplicationWindow {
     id: mainRoot
     property string name
-    title: Qt.application.name + (name ? " - " + name : "")
+    title: Qt.application.name + (workArea.name ? " - " + workArea.name : "")
     width: 800
     height: 600
     visible: true
@@ -32,6 +32,13 @@ ApplicationWindow {
         }
 
         Utils.loadRecentFiles()
+
+        if (Settings.value("Interface", "restoreLastSession")) {
+            var workFilePath = Settings.value("Path", "lastWorkFile")
+            if (workFilePath) {
+                Utils.openAI(workFilePath)
+            }
+        }
     }
 
     onClosing: {
@@ -43,9 +50,14 @@ ApplicationWindow {
         Settings.setMap("MainWindow", geometry)
 
         Utils.saveRecentFiles()
+
+        if (Settings.value("Interface", "restoreLastSession")) {
+            Settings.setValue("Path", "lastWorkFile", workArea.workFilePath)
+        }
     }
 
     WorkArea {
+        id: workArea
         anchors.fill: parent
         visible: name
     }
