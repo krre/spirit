@@ -34,7 +34,7 @@ Window {
 
         Component.onCompleted: {
             for (var i = 0; i < 10; i++) {
-                append({ name: i })
+                append({ name: qsTr("Sign ") + i })
             }
         }
     }
@@ -139,56 +139,24 @@ Window {
             Layout.alignment: Qt.AlignHCenter
             Layout.fillHeight: true
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "lightgreen"
-                border.width: 1
-                border.color: "gray"
-
-                Text {
-                    anchors.centerIn: parent
-                    text: qsTr("Change")
-                }
+            SignButton {
+                text: qsTr("Change")
+                onClicked: print(text)
             }
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "lightgreen"
-                border.width: 1
-                border.color: "gray"
-
-                Text {
-                    anchors.centerIn: parent
-                    text: qsTr("Clear")
-                }
+            SignButton {
+                text: qsTr("Clear")
+                onClicked: print(text)
             }
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "lightgreen"
-                border.width: 1
-                border.color: "gray"
-
-                Text {
-                    anchors.centerIn: parent
-                    text: qsTr("New")
-                }
+            SignButton {
+                text: qsTr("New")
+                onClicked: print(text)
             }
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "lightgreen"
-                border.width: 1
-                border.color: "gray"
-
-                Text {
-                    anchors.centerIn: parent
-                    text: qsTr("Push")
-                }
+            SignButton {
+                text: qsTr("Push")
+                onClicked: print(text)
             }
         }
     }

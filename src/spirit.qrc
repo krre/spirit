@@ -22,5 +22,6 @@
         <file>qml/console/Console.qml</file>
         <file>qml/console/sign/SignBase.qml</file>
         <file>qml/console/sign/SignLib.qml</file>
+        <file>qml/console/sign/SignButton.qml</file>
     </qresource>
 </RCC>
