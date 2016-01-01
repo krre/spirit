@@ -20,7 +20,7 @@
         <file>js/dialog.js</file>
         <file>qml/main/WorkArea.qml</file>
         <file>qml/console/Console.qml</file>
-        <file>qml/console/square/SquareBase.qml</file>
-        <file>qml/console/square/LibSign.qml</file>
+        <file>qml/console/sign/SignBase.qml</file>
+        <file>qml/console/sign/SignLib.qml</file>
     </qresource>
 </RCC>

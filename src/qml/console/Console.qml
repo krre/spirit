@@ -2,7 +2,7 @@ import QtQuick 2.6
 import QtQuick.Controls 1.5
 import QtQuick.Window 2.2
 import QtQuick.Layouts 1.2
-import "square"
+import "sign"
 import "../../js/utils.js" as Utils
 
 Window {
@@ -104,7 +104,7 @@ Window {
             Layout.preferredHeight: 70
             orientation: ListView.Horizontal
             spacing: 5
-            delegate: LibSign {}
+            delegate: SignLib {}
             model: listModel
         }
 
@@ -113,7 +113,7 @@ Window {
             Layout.preferredHeight: 70
             orientation: ListView.Horizontal
             spacing: 5
-            delegate: LibSign {}
+            delegate: SignLib {}
             model: listModel
         }
 
@@ -122,7 +122,7 @@ Window {
             Layout.preferredHeight: 70
             orientation: ListView.Horizontal
             spacing: 5
-            delegate: LibSign {}
+            delegate: SignLib {}
             model: listModel
         }
 
@@ -131,7 +131,7 @@ Window {
             Layout.preferredHeight: 70
             orientation: ListView.Horizontal
             spacing: 5
-            delegate: LibSign {}
+            delegate: SignLib {}
             model: listModel
         }
 

@@ -1,6 +1,6 @@
 import QtQuick 2.6
 
-SquareBase {
+SignBase {
     color: "white"
     border.color: "gray"
 }
