@@ -7,7 +7,7 @@ MessageDialog {
     text: String("<h3>%1 %2</h3>
           Based on Qt %3<br>
           Build on %4<br><br>
-          Copyright © 2015, Vladimir Zarypov").arg(Qt.application.name).arg(Qt.application.version).arg(Core.qtVersion).arg(Core.buildDate)
+          Copyright © 2015-2016, Vladimir Zarypov").arg(Qt.application.name).arg(Qt.application.version).arg(Core.qtVersion).arg(Core.buildDate)
     onVisibleChanged: if (!visible) destroy()
     Component.onCompleted: open()
 }
