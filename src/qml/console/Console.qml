@@ -7,8 +7,8 @@ import "../../js/utils.js" as Utils
 
 Window {
     title: qsTr("Console")
-    width: 310
-    height: 535
+    minimumWidth: 310
+    minimumHeight: 535
     color: "#ced1ff"
 
     Component.onCompleted: {
@@ -30,11 +30,41 @@ Window {
     }
 
     ListModel {
-        id: listModel
+        id: listModel0
 
         Component.onCompleted: {
             for (var i = 0; i < 10; i++) {
-                append({ name: qsTr("Sign ") + i })
+                append({ name: qsTr("Sign 0") + i })
+            }
+        }
+    }
+
+    ListModel {
+        id: listModel1
+
+        Component.onCompleted: {
+            for (var i = 0; i < 10; i++) {
+                append({ name: qsTr("Sign 1") + i })
+            }
+        }
+    }
+
+    ListModel {
+        id: listModel2
+
+        Component.onCompleted: {
+            for (var i = 0; i < 10; i++) {
+                append({ name: qsTr("Sign 2") + i })
+            }
+        }
+    }
+
+    ListModel {
+        id: listModel3
+
+        Component.onCompleted: {
+            for (var i = 0; i < 10; i++) {
+                append({ name: qsTr("Sign 3") + i })
             }
         }
     }
@@ -73,7 +103,7 @@ Window {
             orientation: ListView.Horizontal
             spacing: 5
             delegate: SignLib {}
-            model: listModel
+            model: listModel0
         }
 
         ListView {
@@ -82,7 +112,7 @@ Window {
             orientation: ListView.Horizontal
             spacing: 5
             delegate: SignLib {}
-            model: listModel
+            model: listModel1
         }
 
         ListView {
@@ -91,7 +121,7 @@ Window {
             orientation: ListView.Horizontal
             spacing: 5
             delegate: SignLib {}
-            model: listModel
+            model: listModel2
         }
 
         ListView {
@@ -100,7 +130,7 @@ Window {
             orientation: ListView.Horizontal
             spacing: 5
             delegate: SignLib {}
-            model: listModel
+            model: listModel3
         }
 
         RowLayout {
