@@ -3,6 +3,7 @@ import QtQuick.Controls 1.5
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 import "main"
+import "console"
 import "../js/utils.js" as Utils
 
 ApplicationWindow {
