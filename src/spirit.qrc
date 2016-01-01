@@ -21,5 +21,6 @@
         <file>qml/main/WorkArea.qml</file>
         <file>qml/console/Console.qml</file>
         <file>qml/console/square/SquareBase.qml</file>
+        <file>qml/console/square/LibSign.qml</file>
     </qresource>
 </RCC>

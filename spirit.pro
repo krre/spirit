@@ -34,7 +34,8 @@ DISTFILES += \
     src/js/dialog.js \
     src/qml/main/WorkArea.qml \
     src/qml/console/Console.qml \
-    src/qml/console/square/SquareBase.qml
+    src/qml/console/square/SquareBase.qml \
+    src/qml/console/square/LibSign.qml
 
 HEADERS += \
     src/cpp/base/core.h \
