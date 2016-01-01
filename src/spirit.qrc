@@ -20,5 +20,6 @@
         <file>js/dialog.js</file>
         <file>qml/main/WorkArea.qml</file>
         <file>qml/console/Console.qml</file>
+        <file>qml/console/square/SquareBase.qml</file>
     </qresource>
 </RCC>
