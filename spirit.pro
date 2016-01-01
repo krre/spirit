@@ -36,7 +36,9 @@ DISTFILES += \
     src/qml/console/Console.qml \
     src/qml/console/sign/SignBase.qml \
     src/qml/console/sign/SignLib.qml \
-    src/qml/console/sign/SignButton.qml
+    src/qml/console/sign/SignButton.qml \
+    src/qml/console/sign/SpiritSign.qml \
+    src/qml/console/sign/HumanSign.qml
 
 HEADERS += \
     src/cpp/base/core.h \

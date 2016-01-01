@@ -46,57 +46,25 @@ Window {
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "#5fbffe"
-                border.width: 1
-                border.color: "blue"
-            }
+            SpiritSign {}
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "#5fbffe"
-                border.width: 1
-                border.color: "blue"
-            }
+            SpiritSign {}
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "#5fbffe"
-                border.width: 1
-                border.color: "blue"
-            }
+            SpiritSign {}
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "#5fbffe"
-                border.width: 1
-                border.color: "blue"
-            }
+            SpiritSign {}
         }
 
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "#fca5a5"
-                border.width: 1
-                border.color: "red"
-            }
+            HumanSign {}
 
-            Rectangle {
-                width: 70
-                height: 70
-                color: "#fca5a5"
-                border.width: 1
-                border.color: "red"
-            }
+            HumanSign {}
+
+            HumanSign {}
+
+            HumanSign {}
         }
 
         ListView {

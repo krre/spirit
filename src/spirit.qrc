@@ -23,5 +23,7 @@
         <file>qml/console/sign/SignBase.qml</file>
         <file>qml/console/sign/SignLib.qml</file>
         <file>qml/console/sign/SignButton.qml</file>
+        <file>qml/console/sign/SpiritSign.qml</file>
+        <file>qml/console/sign/HumanSign.qml</file>
     </qresource>
 </RCC>
