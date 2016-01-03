@@ -30,6 +30,26 @@ Window {
     }
 
     ListModel {
+        id: spiritSigns
+
+        Component.onCompleted: {
+            for (var i = 0; i < 3; i++) {
+                append({ name: qsTr("Spirit Sign ") + i })
+            }
+        }
+    }
+
+    ListModel {
+        id: humanSigns
+
+        Component.onCompleted: {
+            for (var i = 0; i < 2; i++) {
+                append({ name: qsTr("Human Sign ") + i })
+            }
+        }
+    }
+
+    ListModel {
         id: listModel0
 
         Component.onCompleted: {
@@ -73,28 +93,22 @@ Window {
         anchors.fill: parent
         anchors.margins: 7
 
-        RowLayout {
-            Layout.alignment: Qt.AlignHCenter
-
-            SpiritSign {}
-
-            SpiritSign {}
-
-            SpiritSign {}
-
-            SpiritSign {}
+        ListView {
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: 70
+            orientation: ListView.Horizontal
+            spacing: 5
+            delegate: SpiritSign {}
+            model: spiritSigns
         }
 
-        RowLayout {
-            Layout.alignment: Qt.AlignHCenter
-
-            HumanSign {}
-
-            HumanSign {}
-
-            HumanSign {}
-
-            HumanSign {}
+        ListView {
+            Layout.preferredWidth: parent.width
+            Layout.preferredHeight: 70
+            orientation: ListView.Horizontal
+            spacing: 5
+            delegate: HumanSign {}
+            model: humanSigns
         }
 
         ListView {
