@@ -12,7 +12,12 @@ Rectangle {
 
     Text {
         id: text
-        anchors.centerIn: parent
+        anchors.fill: parent
+        anchors.margins: 5
+        horizontalAlignment: Text.AlignHCenter
+        verticalAlignment: Text.AlignVCenter
+        wrapMode: Text.WordWrap
+        clip: true
     }
 
     Rectangle {
