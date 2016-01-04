@@ -100,6 +100,7 @@ Window {
             spacing: 5
             delegate: SpiritSign {}
             model: spiritSigns
+            interactive: false
         }
 
         ListView {
@@ -109,6 +110,7 @@ Window {
             spacing: 5
             delegate: HumanSign {}
             model: humanSigns
+            interactive: false
         }
 
         ListView {
