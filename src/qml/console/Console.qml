@@ -160,7 +160,7 @@ Window {
 
             SignButton {
                 text: qsTr("Clear")
-                onClicked: print(text)
+                onClicked: humanSigns.clear()
             }
 
             SignButton {
