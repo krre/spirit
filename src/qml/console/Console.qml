@@ -150,27 +150,21 @@ Window {
         }
 
         RowLayout {
-            Layout.alignment: Qt.AlignHCenter
+            Layout.fillWidth: true
             Layout.fillHeight: true
 
             SignButton {
-                text: qsTr("Change")
-                onClicked: print(text)
-            }
-
-            SignButton {
-                text: qsTr("Clear")
+                Layout.fillWidth: true
+                text: qsTr("New")
                 onClicked: humanSigns.clear()
             }
 
             SignButton {
-                text: qsTr("New")
-                onClicked: print(text)
-            }
-
-            SignButton {
+                Layout.fillWidth: true
                 text: qsTr("Push")
-                onClicked: print(text)
+                onClicked: {
+                    humanSigns.clear()
+                }
             }
         }
     }
