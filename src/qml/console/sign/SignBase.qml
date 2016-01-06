@@ -10,6 +10,7 @@ Rectangle {
     border.color: "gray"
 
     signal clicked
+    signal doubleClicked
 
     Text {
         id: text
@@ -32,6 +33,7 @@ Rectangle {
         id: mouseArea
         anchors.fill: parent
         onClicked: root.clicked()
+        onDoubleClicked: root.doubleClicked()
         visible: isClickable
     }
 }

@@ -42,11 +42,14 @@ Window {
     ListModel {
         id: humanSigns
 
-        Component.onCompleted: {
-            for (var i = 0; i < 2; i++) {
-                append({ name: qsTr("Human Sign ") + i })
+        function clean() {
+            clear()
+            for (var i = 0; i < 4; i++) {
+                append({ name: "", sign: -1 })
             }
         }
+
+        Component.onCompleted: clean()
     }
 
     ListModel {
@@ -54,7 +57,7 @@ Window {
 
         Component.onCompleted: {
             for (var i = 0; i < 10; i++) {
-                append({ name: qsTr("Sign 0") + i })
+                append({ name: qsTr("Sign 0") + i, sign: i })
             }
         }
     }
@@ -64,7 +67,7 @@ Window {
 
         Component.onCompleted: {
             for (var i = 0; i < 10; i++) {
-                append({ name: qsTr("Sign 1") + i })
+                append({ name: qsTr("Sign 1") + i, sign: 10 * i })
             }
         }
     }
@@ -74,7 +77,7 @@ Window {
 
         Component.onCompleted: {
             for (var i = 0; i < 10; i++) {
-                append({ name: qsTr("Sign 2") + i })
+                append({ name: qsTr("Sign 2") + i, sign: 20 * i })
             }
         }
     }
@@ -84,7 +87,7 @@ Window {
 
         Component.onCompleted: {
             for (var i = 0; i < 10; i++) {
-                append({ name: qsTr("Sign 3") + i })
+                append({ name: qsTr("Sign 3") + i, sign: 30 * i })
             }
         }
     }
@@ -104,6 +107,7 @@ Window {
         }
 
         ListView {
+            id: humanView
             Layout.preferredWidth: parent.width
             Layout.preferredHeight: 70
             orientation: ListView.Horizontal
@@ -156,14 +160,14 @@ Window {
             SignButton {
                 Layout.fillWidth: true
                 text: qsTr("New")
-                onClicked: humanSigns.clear()
+                onClicked: humanSigns.clean()
             }
 
             SignButton {
                 Layout.fillWidth: true
                 text: qsTr("Push")
                 onClicked: {
-                    humanSigns.clear()
+                    humanSigns.clean()
                 }
             }
         }
