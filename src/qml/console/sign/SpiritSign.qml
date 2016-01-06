@@ -4,4 +4,5 @@ SignBase {
     color: "#5fbffe"
     border.color: "blue"
     text: name
+    isClickable: false
 }
