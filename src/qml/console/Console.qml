@@ -34,7 +34,7 @@ Window {
 
         Component.onCompleted: {
             for (var i = 0; i < 3; i++) {
-                append({ name: qsTr("Spirit Sign ") + i })
+                append({ name: qsTr("Sign 0") + i })
             }
         }
     }
