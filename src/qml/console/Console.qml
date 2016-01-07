@@ -167,7 +167,18 @@ Window {
                 Layout.fillWidth: true
                 text: qsTr("Push")
                 onClicked: {
-                    humanSigns.clean()
+                    var message = []
+                    for (var i = 0; i < humanSigns.count; i++) {
+                        var sign = humanSigns.get(i).sign
+                        if (sign !== -1) {
+                            message.push(sign)
+                        }
+                    }
+
+                    if (message.length) {
+                        print(message)
+                        humanSigns.clean()
+                    }
                 }
             }
         }
