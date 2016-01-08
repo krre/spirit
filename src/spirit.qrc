@@ -25,5 +25,8 @@
         <file>qml/console/sign/SignButton.qml</file>
         <file>qml/console/sign/SpiritSign.qml</file>
         <file>qml/console/sign/HumanSign.qml</file>
+        <file>qml/console/Messages.qml</file>
+        <file>qml/console/Actions.qml</file>
+        <file>qml/console/Environment.qml</file>
     </qresource>
 </RCC>

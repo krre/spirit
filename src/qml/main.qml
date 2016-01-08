@@ -9,6 +9,7 @@ import "../js/utils.js" as Utils
 ApplicationWindow {
     id: mainRoot
     property string name
+    property alias sysPalette: sysPalette
     title: Qt.application.name + (workArea.name ? " - " + workArea.name : "")
     width: 800
     height: 600
@@ -34,6 +35,11 @@ ApplicationWindow {
         if (Settings.value("Interface", "restoreLastSession")) {
             Settings.setValue("Path", "lastWorkFile", workArea.workFilePath)
         }
+    }
+
+    SystemPalette {
+        id: sysPalette
+        colorGroup: SystemPalette.Active
     }
 
     WorkArea {

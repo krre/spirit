@@ -24,11 +24,6 @@ Window {
 
     onVisibleChanged: if (!visible) root.destroy()
 
-    SystemPalette {
-        id: sysPalette
-        colorGroup: SystemPalette.Active
-    }
-
     Action {
         shortcut: "Esc"
         onTriggered: root.destroy()
