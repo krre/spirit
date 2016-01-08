@@ -38,10 +38,10 @@ DISTFILES += \
     src/qml/console/sign/SignLib.qml \
     src/qml/console/sign/SignButton.qml \
     src/qml/console/sign/SpiritSign.qml \
-    src/qml/console/sign/HumanSign.qml \
     src/qml/console/Messages.qml \
     src/qml/console/Actions.qml \
-    src/qml/console/Environment.qml
+    src/qml/console/Environment.qml \
+    src/qml/console/sign/SignHuman.qml
 
 HEADERS += \
     src/cpp/base/core.h \

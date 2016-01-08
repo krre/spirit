@@ -86,7 +86,7 @@ ColumnLayout {
         Layout.preferredHeight: 70
         orientation: ListView.Horizontal
         spacing: 5
-        delegate: HumanSign {}
+        delegate: SignHuman {}
         model: humanSigns
         interactive: false
     }
