@@ -31,6 +31,13 @@ Window {
         anchors.fill: parent
 
         Tab {
+            title: qsTr("Personality")
+            active: true
+
+            Personality {}
+        }
+
+        Tab {
             title: qsTr("Messages")
             active: true
 

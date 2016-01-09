@@ -28,5 +28,6 @@
         <file>qml/console/Messages.qml</file>
         <file>qml/console/Actions.qml</file>
         <file>qml/console/Environment.qml</file>
+        <file>qml/console/Personality.qml</file>
     </qresource>
 </RCC>
