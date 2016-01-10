@@ -98,13 +98,6 @@ MenuBar {
         title: qsTr("View")
 
         MenuItem {
-            id: consoleAI
-            text: qsTr("Console")
-            shortcut: "Tab"
-            checkable: true
-        }
-
-        MenuItem {
             text: qsTr("Zoom In")
             shortcut: StandardKey.ZoomIn
             onTriggered: workArea.camera.zoomIn()
@@ -125,13 +118,6 @@ MenuBar {
             onTriggered: workArea.camera.reset()
             enabled: workArea.visible
         }
-
-        MenuItem {
-            text: qsTr("Full Screen")
-            shortcut: "F11"
-            checkable: true
-            onTriggered: checked ? mainRoot.showFullScreen() : mainRoot.showNormal()
-        }
     }
 
     Menu {
@@ -140,6 +126,24 @@ MenuBar {
         MenuItem {
             text: qsTr("Options...")
             onTriggered: Utils.createDynamicObject(mainRoot, "qrc:/qml/main/Options.qml")
+        }
+    }
+
+    Menu {
+        title: qsTr("Window")
+
+        MenuItem {
+            id: consoleAI
+            text: qsTr("Console")
+            shortcut: "Tab"
+            checkable: true
+        }
+
+        MenuItem {
+            text: qsTr("Full Screen")
+            shortcut: "F11"
+            checkable: true
+            onTriggered: checked ? mainRoot.showFullScreen() : mainRoot.showNormal()
         }
     }
 
