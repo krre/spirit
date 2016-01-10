@@ -1,10 +1,5 @@
 #include "brain.h"
 
-Brain::Brain(QObject *parent) : QObject(parent)
-{
-
-}
-
 void Brain::create(const QString& filePath)
 {
     storage.create(filePath);

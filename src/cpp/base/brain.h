@@ -8,7 +8,7 @@ class Brain : public QObject
     Q_PROPERTY(bool isRunning READ isRunning NOTIFY isRunningChanged)
     Q_PROPERTY(bool isPaused READ isPaused WRITE setIsPaused NOTIFY isPausedChanged)
 public:
-    explicit Brain(QObject *parent = 0);
+    Brain() {}
     Q_INVOKABLE void create(const QString& filePath);
     Q_INVOKABLE void start(const QString& filePath);
     Q_INVOKABLE void stop();
