@@ -8,6 +8,8 @@ void Storage::create(const QString& filePath)
         return;
     }
 
+    this->filePath = filePath;
+
     QDataStream out(&file);
     out.writeRawData("SPIRIT-v0010", 12);
     file.close();
