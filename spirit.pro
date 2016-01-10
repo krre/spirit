@@ -37,7 +37,6 @@ DISTFILES += \
     src/qml/console/Console.qml \
     src/qml/console/sign/SignBase.qml \
     src/qml/console/sign/SignLib.qml \
-    src/qml/console/sign/SignButton.qml \
     src/qml/console/Messages.qml \
     src/qml/console/Actions.qml \
     src/qml/console/Environment.qml \

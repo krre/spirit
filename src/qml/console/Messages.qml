@@ -135,14 +135,16 @@ ColumnLayout {
         Layout.fillWidth: true
         Layout.fillHeight: true
 
-        SignButton {
+        Button {
             Layout.fillWidth: true
+            Layout.preferredHeight: 70
             text: qsTr("New")
             onClicked: humanSigns.clean()
         }
 
-        SignButton {
+        Button {
             Layout.fillWidth: true
+            Layout.preferredHeight: 70
             text: qsTr("Send")
             onClicked: {
                 var message = []

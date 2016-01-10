@@ -22,7 +22,6 @@
         <file>qml/console/Console.qml</file>
         <file>qml/console/sign/SignBase.qml</file>
         <file>qml/console/sign/SignLib.qml</file>
-        <file>qml/console/sign/SignButton.qml</file>
         <file>qml/console/sign/SignSpirit.qml</file>
         <file>qml/console/sign/SignHuman.qml</file>
         <file>qml/console/Messages.qml</file>

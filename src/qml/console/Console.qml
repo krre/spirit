@@ -6,8 +6,6 @@ import "../../js/utils.js" as Utils
 
 WindowDialog {
     title: qsTr("Console")
-    minimumWidth: 310
-    minimumHeight: 570
     indent: 0
     modality: Qt.NonModal
     hideButtons: true
