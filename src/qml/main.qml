@@ -10,6 +10,7 @@ ApplicationWindow {
     id: mainRoot
     property string name
     property alias sysPalette: sysPalette
+    property var consoleWindow
     property var logWindow
     title: Qt.application.name + (workArea.name ? " - " + workArea.name : "") + (Brain.isPaused ? " " + qsTr("(paused)") : "")
     width: 800
@@ -38,6 +39,10 @@ ApplicationWindow {
         }
     }
 
+    onConsoleWindowChanged: {
+        if (!consoleWindow) mainMenu.consoleAI.checked = false
+    }
+
     onLogWindowChanged: {
         if (!logWindow) mainMenu.log.checked = false
     }
@@ -51,15 +56,5 @@ ApplicationWindow {
         id: workArea
         anchors.fill: parent
         visible: name
-    }
-
-    Console {
-        id: consoleAI
-        visible: mainMenu.consoleAI.checked
-        onVisibleChanged: {
-            if (!visible) {
-                mainMenu.consoleAI.checked = false
-            }
-        }
     }
 }

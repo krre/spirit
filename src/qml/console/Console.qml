@@ -1,31 +1,17 @@
 import QtQuick 2.6
 import QtQuick.Controls 1.5
 import QtQuick.Window 2.2
+import "../components"
 import "../../js/utils.js" as Utils
 
-Window {
+WindowDialog {
     title: qsTr("Console")
     minimumWidth: 310
     minimumHeight: 570
-    color: sysPalette.window
-
-    Component.onCompleted: {
-        Utils.loadGeomerty("Console")
-    }
-
-    Component.onDestruction: {
-        Utils.saveGeometry("Console")
-    }
-
-    Action {
-        shortcut: "Esc"
-        onTriggered: hide()
-    }
-
-    Action {
-        shortcut: "Tab"
-        onTriggered: hide()
-    }
+    indent: 0
+    modality: Qt.NonModal
+    hideButtons: true
+    settingsGroup: "Console"
 
     TabView {
         anchors.fill: parent

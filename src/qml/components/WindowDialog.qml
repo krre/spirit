@@ -48,7 +48,7 @@ Window {
         anchors.fill: parent
         anchors.margins: indent
         Layout.alignment: Qt.AlignHCenter
-        spacing: indent
+        spacing: 7
 
         Item {
             id: content

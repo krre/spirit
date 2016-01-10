@@ -139,6 +139,13 @@ MenuBar {
             text: qsTr("Console")
             shortcut: "Tab"
             checkable: true
+            onTriggered: {
+                if (checked) {
+                    consoleWindow = Utils.createDynamicObject(mainRoot, "qrc:/qml/console/Console.qml")
+                } else {
+                    consoleWindow.destroy()
+                }
+            }
         }
 
         MenuItem {
