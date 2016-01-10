@@ -29,9 +29,17 @@ Rectangle {
                 Component.onCompleted: reset()
 
                 function reset() {
-                    position = Qt.vector3d( 0.0, 0.0, -40.0 )
-                    upVector = Qt.vector3d( 0.0, 1.0, 0.0 )
-                    viewCenter = Qt.vector3d( 0.0, 0.0, 0.0 )
+                    position = Qt.vector3d(0.0, 0.0, -40.0)
+                    upVector = Qt.vector3d(0.0, 1.0, 0.0)
+                    viewCenter = Qt.vector3d(0.0, 0.0, 0.0)
+                }
+
+                function zoomIn() {
+                    position = Qt.vector3d(position.x, position.y, Math.min(position.z + 10, -10))
+                }
+
+                function zoomOut() {
+                    position = Qt.vector3d(position.x, position.y, position.z - 10)
                 }
             }
 

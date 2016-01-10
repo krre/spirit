@@ -86,6 +86,19 @@ MenuBar {
         }
 
         MenuItem {
+            text: qsTr("Zoom In")
+            shortcut: StandardKey.ZoomIn
+            onTriggered: workArea.camera.zoomIn()
+        }
+
+        MenuItem {
+            text: qsTr("Zoom Out")
+            shortcut: StandardKey.ZoomOut
+            onTriggered: workArea.camera.zoomOut()
+
+        }
+
+        MenuItem {
             text: qsTr("Full Screen")
             shortcut: "F11"
             checkable: true
