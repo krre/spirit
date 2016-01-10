@@ -13,7 +13,19 @@ WindowDialog {
     hideButtons: true
     settingsGroup: "Console"
 
+    Component.onCompleted: {
+        var currentIndex = Settings.value(settingsGroup, "currentTab")
+        if (!(typeof currentIndex === "undefined")) {
+            tabView.currentIndex = currentIndex
+        }
+    }
+
+    Component.onDestruction: {
+        Settings.setValue(settingsGroup, "currentTab", tabView.currentIndex)
+    }
+
     TabView {
+        id: tabView
         anchors.fill: parent
         visible: workArea.visible
 
