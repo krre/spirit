@@ -95,3 +95,41 @@ function loadRecentFiles() {
         }
     }
 }
+
+function loadSession() {
+    if (Settings.value("Interface", "restoreLastSession")) {
+        var workFilePath = Settings.value("Path", "lastWorkFile")
+        if (workFilePath) {
+            openAI(workFilePath)
+        }
+
+        var openWindowsList = Settings.list("OpenWindows")
+        if (openWindowsList.length) {
+            for (var i in openWindowsList) {
+                var window = openWindowsList[i]
+                if (window === "Console") {
+                    mainMenu.consoleAI.trigger()
+                } else if (window === "Log") {
+                    mainMenu.log.trigger()
+                }
+            }
+        }
+    }
+}
+
+function saveSession() {
+    if (Settings.value("Interface", "restoreLastSession")) {
+        Settings.setValue("Path", "lastWorkFile", workArea.workFilePath)
+
+        var openWindowsList = []
+        if (consoleWindow) {
+            openWindowsList.push("Console")
+        }
+
+        if (logWindow) {
+            openWindowsList.push("Log")
+        }
+
+        Settings.setList("OpenWindows", openWindowsList)
+    }
+}

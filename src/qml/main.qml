@@ -21,22 +21,13 @@ ApplicationWindow {
     Component.onCompleted: {
         Utils.loadGeomerty("MainWindow")
         Utils.loadRecentFiles()
-
-        if (Settings.value("Interface", "restoreLastSession")) {
-            var workFilePath = Settings.value("Path", "lastWorkFile")
-            if (workFilePath) {
-                Utils.openAI(workFilePath)
-            }
-        }
+        Utils.loadSession()
     }
 
     onClosing: {
         Utils.saveGeometry("MainWindow")
         Utils.saveRecentFiles()
-
-        if (Settings.value("Interface", "restoreLastSession")) {
-            Settings.setValue("Path", "lastWorkFile", workArea.workFilePath)
-        }
+        Utils.saveSession()
     }
 
     onConsoleWindowChanged: {
