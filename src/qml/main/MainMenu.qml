@@ -141,6 +141,14 @@ MenuBar {
         }
 
         MenuItem {
+            id: log
+            text: qsTr("Log")
+            shortcut: "Ctrl+L"
+            checkable: true
+            onTriggered: Utils.createDynamicObject(mainRoot, "qrc:/qml/main/Log.qml")
+        }
+
+        MenuItem {
             text: qsTr("Full Screen")
             shortcut: "F11"
             checkable: true

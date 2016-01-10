@@ -43,7 +43,8 @@ DISTFILES += \
     src/qml/console/Environment.qml \
     src/qml/console/sign/SignHuman.qml \
     src/qml/console/sign/SignSpirit.qml \
-    src/qml/console/Personality.qml
+    src/qml/console/Personality.qml \
+    src/qml/main/Log.qml
 
 HEADERS += \
     src/cpp/base/core.h \

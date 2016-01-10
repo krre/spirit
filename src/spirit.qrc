@@ -29,5 +29,6 @@
         <file>qml/console/Actions.qml</file>
         <file>qml/console/Environment.qml</file>
         <file>qml/console/Personality.qml</file>
+        <file>qml/main/Log.qml</file>
     </qresource>
 </RCC>
