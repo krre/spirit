@@ -89,13 +89,22 @@ MenuBar {
             text: qsTr("Zoom In")
             shortcut: StandardKey.ZoomIn
             onTriggered: workArea.camera.zoomIn()
+            enabled: workArea.visible
         }
 
         MenuItem {
             text: qsTr("Zoom Out")
             shortcut: StandardKey.ZoomOut
             onTriggered: workArea.camera.zoomOut()
+            enabled: workArea.visible
 
+        }
+
+        MenuItem {
+            text: qsTr("Reset")
+            shortcut: "F12"
+            onTriggered: workArea.camera.reset()
+            enabled: workArea.visible
         }
 
         MenuItem {
@@ -103,12 +112,6 @@ MenuBar {
             shortcut: "F11"
             checkable: true
             onTriggered: checked ? mainRoot.showFullScreen() : mainRoot.showNormal()
-        }
-
-        MenuItem {
-            text: qsTr("Reset")
-            shortcut: "F12"
-            onTriggered: workArea.camera.reset()
         }
     }
 
