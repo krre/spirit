@@ -3,6 +3,7 @@ import QtQuick.Controls 1.5
 import QtQuick.Layouts 1.2
 import QtQuick.Window 2.2
 import QtQuick.Dialogs 1.2
+import "../../js/utils.js" as Utils
 
 Window {
     default property alias data: content.data
@@ -10,6 +11,8 @@ Window {
     property int standardButtons: StandardButton.Ok | StandardButton.Cancel
     property bool stayOnScreen: false
     property alias okButton: okButton
+    property bool hideButtons: false
+    property string settingsGroup
     id: root
     width: 500
     height: 500
@@ -21,6 +24,18 @@ Window {
 
     signal accepted
     signal rejected
+
+    Component.onCompleted: {
+        if (settingsGroup) {
+            Utils.loadGeomerty(settingsGroup)
+        }
+    }
+
+    Component.onDestruction: {
+        if (settingsGroup) {
+            Utils.saveGeometry(settingsGroup)
+        }
+    }
 
     onVisibleChanged: if (!visible) root.destroy()
 
@@ -44,6 +59,7 @@ Window {
 
         RowLayout {
             Layout.alignment: Qt.AlignHCenter
+            visible: !hideButtons
 
             ButtonBase {
                 id: okButton

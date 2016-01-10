@@ -6,6 +6,7 @@ import "../../js/dialog.js" as Dialog
 MenuBar {
     property alias recentFilesModel: recentFilesModel
     property alias consoleAI: consoleAI
+    property alias log: log
 
     Menu {
         title: qsTr("File")
@@ -145,7 +146,13 @@ MenuBar {
             text: qsTr("Log")
             shortcut: "Ctrl+L"
             checkable: true
-            onTriggered: Utils.createDynamicObject(mainRoot, "qrc:/qml/main/Log.qml")
+            onTriggered: {
+                if (checked) {
+                    logWindow = Utils.createDynamicObject(mainRoot, "qrc:/qml/main/Log.qml")
+                } else {
+                    logWindow.destroy()
+                }
+            }
         }
 
         MenuItem {

@@ -10,6 +10,7 @@ ApplicationWindow {
     id: mainRoot
     property string name
     property alias sysPalette: sysPalette
+    property var logWindow
     title: Qt.application.name + (workArea.name ? " - " + workArea.name : "") + (Brain.isPaused ? " " + qsTr("(paused)") : "")
     width: 800
     height: 600
@@ -35,6 +36,10 @@ ApplicationWindow {
         if (Settings.value("Interface", "restoreLastSession")) {
             Settings.setValue("Path", "lastWorkFile", workArea.workFilePath)
         }
+    }
+
+    onLogWindowChanged: {
+        if (!logWindow) mainMenu.log.checked = false
     }
 
     SystemPalette {
