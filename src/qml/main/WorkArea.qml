@@ -68,7 +68,7 @@ Rectangle {
 
             PhongMaterial {
                 id: material
-                diffuse: Qt.rgba( 0.4, 0.7, 0.0, 1.0 )
+                diffuse: Qt.rgba(0.4, 0.7, 0.0, 1.0)
             }
 
             CuboidMesh {
@@ -84,7 +84,7 @@ Rectangle {
 
             Entity {
                 id: cuboidEntity
-                components: [ cuboidMesh, material, cuboidTransform ]
+                components: [cuboidMesh, material, cuboidTransform]
             }
         }
     }
