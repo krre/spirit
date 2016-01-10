@@ -96,6 +96,7 @@ MenuBar {
 
     Menu {
         title: qsTr("View")
+        visible: Brain.isRunning
 
         MenuItem {
             text: qsTr("Zoom In")
