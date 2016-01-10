@@ -91,6 +91,12 @@ MenuBar {
             checkable: true
             onTriggered: checked ? mainRoot.showFullScreen() : mainRoot.showNormal()
         }
+
+        MenuItem {
+            text: qsTr("Reset")
+            shortcut: "F12"
+            onTriggered: workArea.camera.reset()
+        }
     }
 
     Menu {

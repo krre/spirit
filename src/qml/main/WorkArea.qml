@@ -6,6 +6,7 @@ import Qt3D.Render 2.0
 Rectangle {
     property string name
     property string workFilePath
+    property alias camera: camera
     color: "gray"
 
     Scene3D {
@@ -24,9 +25,14 @@ Rectangle {
                 aspectRatio: scene3d.width / scene3d.height
                 nearPlane : 0.1
                 farPlane : 1000.0
-                position: Qt.vector3d( 0.0, 0.0, -40.0 )
-                upVector: Qt.vector3d( 0.0, 1.0, 0.0 )
-                viewCenter: Qt.vector3d( 0.0, 0.0, 0.0 )
+
+                Component.onCompleted: reset()
+
+                function reset() {
+                    position = Qt.vector3d( 0.0, 0.0, -40.0 )
+                    upVector = Qt.vector3d( 0.0, 1.0, 0.0 )
+                    viewCenter = Qt.vector3d( 0.0, 0.0, 0.0 )
+                }
             }
 
             Configuration  {
