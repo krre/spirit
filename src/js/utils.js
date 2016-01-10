@@ -11,15 +11,13 @@ function createDynamicObject(parent, url, properties) {
 function createAI(dirPath) {
     Core.mkpath(dirPath + "/log") // create work dir and log dir simultaneously
     var name = Core.pathToBaseName(dirPath)
-    var spiritPath = dirPath + "/" + name + ".spirit"
-    Storage.create(spiritPath)
-    workArea.name = name
-    workArea.workFilePath = spiritPath
-    addRecentFile(spiritPath)
-    Brain.run(spiritPath)
+    var filePath = dirPath + "/" + name + ".spirit"
+    Storage.create(filePath)
+    openAI(filePath)
 }
 
 function openAI(filePath) {
+    closeAI()
     workArea.name = Core.pathToBaseName(filePath)
     workArea.workFilePath = filePath
     addRecentFile(filePath)
