@@ -139,7 +139,7 @@ ColumnLayout {
 
         SignButton {
             Layout.fillWidth: true
-            text: qsTr("Push")
+            text: qsTr("Send")
             onClicked: {
                 var message = []
                 for (var i = 0; i < humanSigns.count; i++) {
@@ -150,7 +150,7 @@ ColumnLayout {
                 }
 
                 if (message.length) {
-                    print(message)
+                    Brain.sendMessage(message)
                     humanSigns.clean()
                 }
             }

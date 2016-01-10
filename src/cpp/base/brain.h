@@ -15,6 +15,8 @@ public:
     Q_INVOKABLE void run();
     Q_INVOKABLE void pause();
 
+    Q_INVOKABLE void sendMessage(const QStringList& message);
+
     isRunning() const { return m_isRunning; }
     void setIsRunning(const bool isRunning);
 

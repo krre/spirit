@@ -26,6 +26,11 @@ void Brain::pause()
     setIsPaused(true);
 }
 
+void Brain::sendMessage(const QStringList& message)
+{
+    qDebug() << message;
+}
+
 void Brain::setIsRunning(const bool isRunning)
 {
     if (isRunning == m_isRunning) return;
