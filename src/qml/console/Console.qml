@@ -29,6 +29,7 @@ Window {
 
     TabView {
         anchors.fill: parent
+        visible: workArea.visible
 
         Tab {
             title: qsTr("Personality")
