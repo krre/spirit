@@ -9,6 +9,8 @@ Rectangle {
     property alias camera: camera
     color: "gray"
 
+    Component.onDestruction: Brain.stop()
+
     Scene3D {
         id: scene3d
         anchors.fill: parent

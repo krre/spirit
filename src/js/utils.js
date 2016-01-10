@@ -16,15 +16,18 @@ function createAI(dirPath) {
     workArea.name = name
     workArea.workFilePath = spiritPath
     addRecentFile(spiritPath)
+    Brain.run(spiritPath)
 }
 
 function openAI(filePath) {
     workArea.name = Core.pathToBaseName(filePath)
     workArea.workFilePath = filePath
     addRecentFile(filePath)
+    Brain.run(filePath)
 }
 
 function closeAI() {
+    Brain.stop()
     workArea.name = ""
     workArea.workFilePath = ""
 }

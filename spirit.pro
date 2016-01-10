@@ -7,7 +7,8 @@ SOURCES += \
     src/cpp/main.cpp \
     src/cpp/base/core.cpp \
     src/cpp/base/settings.cpp \
-    src/cpp/base/storage.cpp
+    src/cpp/base/storage.cpp \
+    src/cpp/base/brain.cpp
 
 RESOURCES += \
     src/spirit.qrc
@@ -47,4 +48,5 @@ DISTFILES += \
 HEADERS += \
     src/cpp/base/core.h \
     src/cpp/base/settings.h \
-    src/cpp/base/storage.h
+    src/cpp/base/storage.h \
+    src/cpp/base/brain.h
