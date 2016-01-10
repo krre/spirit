@@ -9,6 +9,6 @@ void Storage::create(const QString& filePath)
     }
 
     QDataStream out(&file);
-    out.writeRawData("Spirit", 6);
+    out.writeRawData("SPIRIT-v0010", 12);
     file.close();
 }
