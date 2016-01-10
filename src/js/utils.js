@@ -22,7 +22,7 @@ function openAI(filePath) {
     workArea.name = Core.pathToBaseName(filePath)
     workArea.workFilePath = filePath
     addRecentFile(filePath)
-    Brain.run(filePath)
+    Brain.start(filePath)
 }
 
 function closeAI() {

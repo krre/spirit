@@ -76,6 +76,25 @@ MenuBar {
     }
 
     Menu {
+        title: qsTr("Brain")
+        visible: Brain.isRunning
+
+        MenuItem {
+            text: qsTr("Run")
+            shortcut: "F5"
+            enabled: Brain.isRunning && Brain.isPaused
+            onTriggered: Brain.run()
+        }
+
+        MenuItem {
+            text: qsTr("Pause")
+            shortcut: "F6"
+            enabled: Brain.isRunning && !Brain.isPaused
+            onTriggered: Brain.pause()
+        }
+    }
+
+    Menu {
         title: qsTr("View")
 
         MenuItem {
