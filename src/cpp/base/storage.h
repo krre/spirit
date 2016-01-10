@@ -6,7 +6,7 @@ class Storage : public QObject
     Q_OBJECT
 public:
     explicit Storage() {}
-    Q_INVOKABLE void create(const QString& filePath);
+    void create(const QString& filePath);
 private:
     QString filePath;
 };

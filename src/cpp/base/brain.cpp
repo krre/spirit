@@ -5,10 +5,15 @@ Brain::Brain(QObject *parent) : QObject(parent)
 
 }
 
+void Brain::create(const QString& filePath)
+{
+    storage.create(filePath);
+}
+
 void Brain::run(const QString& filePath)
 {
     isRunning = true;
-    qDebug() << "Brain run with" << filePath;
+    qDebug() << "Brain runned" << filePath;
     this->filePath = filePath;
 }
 
