@@ -9,17 +9,16 @@ ColumnLayout {
 
     Connections {
         target: Brain
-        onAnswered: print("Answer:", answer)
+        onAnswered: {
+            spiritSigns.clear()
+            for (var sign in answer) {
+                spiritSigns.append({ name: answer[sign]})
+            }
+        }
     }
 
     ListModel {
         id: spiritSigns
-
-        Component.onCompleted: {
-            for (var i = 0; i < 3; i++) {
-                append({ name: qsTr("Sign 0") + i })
-            }
-        }
     }
 
     ListModel {
