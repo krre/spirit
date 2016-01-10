@@ -29,6 +29,9 @@ void Brain::pause()
 void Brain::sendMessage(const QStringList& message)
 {
     qDebug() << message;
+    QStringList answer;
+    answer << "I" << "receive" << "message";
+    answered(answer);
 }
 
 void Brain::setIsRunning(const bool isRunning)

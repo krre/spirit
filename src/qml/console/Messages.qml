@@ -7,6 +7,11 @@ ColumnLayout {
     anchors.fill: parent
     anchors.margins: 7
 
+    Connections {
+        target: Brain
+        onAnswered: print("Answer:", answer)
+    }
+
     ListModel {
         id: spiritSigns
 

@@ -26,6 +26,7 @@ public:
 signals:
     void isRunningChanged(bool isRunning);
     void isPausedChanged(bool isPaused);
+    void answered(QStringList answer);
 
 private:
     Storage storage;
