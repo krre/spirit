@@ -17,10 +17,10 @@ public:
 
     Q_INVOKABLE void sendMessage(const QStringList& message);
 
-    isRunning() const { return m_isRunning; }
+    bool isRunning() const { return m_isRunning; }
     void setIsRunning(const bool isRunning);
 
-    isPaused() const { return m_isPaused; }
+    bool isPaused() const { return m_isPaused; }
     void setIsPaused(bool isPaused);
 
 signals:
