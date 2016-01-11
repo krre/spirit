@@ -1,4 +1,5 @@
 #include "brain.h"
+#include "logger.h"
 
 void Brain::create(const QString& filePath)
 {
@@ -29,9 +30,11 @@ void Brain::pause()
 void Brain::sendMessage(const QStringList& message)
 {
     qDebug() << message;
+    LOGGER() << "[RECEIVE] " << message;
     QStringList answer;
     answer << "I" << "receive" << "message";
     answered(answer);
+    LOGGER() << "[SEND] " << message;
 }
 
 void Brain::setIsRunning(const bool isRunning)

@@ -1,6 +1,7 @@
 #pragma once
 #include <QtCore>
 #include "storage.h"
+#include "core.h"
 
 class Brain : public QObject
 {
@@ -22,6 +23,8 @@ public:
 
     bool isPaused() const { return m_isPaused; }
     void setIsPaused(bool isPaused);
+
+    QString logDir() const { return Core::pathToDir(filePath) + "/log"; }
 
 signals:
     void isRunningChanged(bool isRunning);

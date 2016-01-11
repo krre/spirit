@@ -11,6 +11,12 @@ QString Core::pathToBaseName(const QString& path)
     return fileInfo.baseName();
 }
 
+QString Core::pathToDir(const QString &path)
+{
+    QFileInfo fileInfo(path);
+    return fileInfo.dir().absolutePath();
+}
+
 bool Core::isFileExists(const QString& filePath)
 {
     QFileInfo checkFile(filePath);
