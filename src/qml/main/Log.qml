@@ -18,7 +18,7 @@ WindowDialog {
     Component.onCompleted: reloadLog()
 
     function reloadLog() {
-        textArea.text = ""
+        textArea.remove(0, textArea.length)
         var logList = Core.loadList(Brain.logPath())
         for (var i in logList) {
             textArea.append(logList[i])
