@@ -1,6 +1,7 @@
 import QtQuick 2.6
 import QtQuick.Controls 1.5
 import QtQuick.Window 2.2
+import QtQuick.Layouts 1.2
 import Spirit 1.0
 import "../components"
 import "../../js/utils.js" as Utils
@@ -30,9 +31,23 @@ WindowDialog {
         onFileChanged: reloadLog()
     }
 
-    TextArea {
-        id: textArea
+    ColumnLayout {
         anchors.fill: parent
-        readOnly: true
+        spacing: 0
+
+        Button {
+            Layout.margins: 7
+            text: qsTr("Clear")
+            onClicked: {
+                Core.saveList(Brain.logPath(), [])
+            }
+        }
+
+        TextArea {
+            id: textArea
+            Layout.fillWidth: true
+            Layout.fillHeight: true
+            readOnly: true
+        }
     }
 }
