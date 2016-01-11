@@ -26,7 +26,7 @@ public:
     void setIsPaused(bool isPaused);
 
     Q_INVOKABLE QString logDir() const { return Core::pathToDir(filePath) + "/log"; }
-    Q_INVOKABLE QString logPath() const { return Logger::Helper().logPath(); }
+    Q_INVOKABLE QString logPath() const { return logDir() + "/spirit-" + QDateTime::currentDateTimeUtc().toLocalTime().toString("yyyy-MM-dd") + ".log"; }
 
 signals:
     void isRunningChanged(bool isRunning);

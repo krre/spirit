@@ -25,5 +25,7 @@ public:
     Q_INVOKABLE QChar separator() { return QDir::separator(); }
     Q_INVOKABLE void mkpath(const QString& dirPath);
     Q_INVOKABLE QString createUuid() { return QUuid::createUuid().toString(); }
+    Q_INVOKABLE static void saveList(const QString& filePath, const QStringList &list);
+    Q_INVOKABLE static QStringList loadList(const QString& filePath);
 
 };

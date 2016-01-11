@@ -16,7 +16,6 @@ public:
         explicit Helper() : debug(&buffer) {}
         ~Helper() { write(); }
         QDebug& stream() { return debug.noquote(); }
-        QString logPath();
 
     private:
         void write();

@@ -14,14 +14,24 @@ WindowDialog {
     hideButtons: true
     settingsGroup: "Log"
 
+    Component.onCompleted: reloadLog()
+
+    function reloadLog() {
+        textArea.text = ""
+        var logList = Core.loadList(Brain.logPath())
+        for (var i in logList) {
+            textArea.append(logList[i])
+        }
+    }
+
     FileWatcher {
         id: fileWatcher
         filePath: Brain.logPath()
-        onFileChanged: print(path)
-        onDirectoryChanged: print(path)
+        onFileChanged: reloadLog()
     }
 
     TextArea {
+        id: textArea
         anchors.fill: parent
         readOnly: true
     }

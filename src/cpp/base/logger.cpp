@@ -9,11 +9,6 @@ Logger& Logger::instance()
     return logger;
 }
 
-QString Logger::Helper::logPath()
-{
-    return brain->logDir() + "/spirit-" + QDateTime::currentDateTimeUtc().toLocalTime().toString("yyyy-MM-dd") + ".log";
-}
-
 void Logger::Helper::write() {
 
     QString text;
@@ -21,7 +16,7 @@ void Logger::Helper::write() {
     ts << QDateTime::currentDateTimeUtc().toLocalTime().toString("yyyy-MM-dd hh:mm:ss.zzz") << ": ";
     ts << buffer.trimmed() << "\n";
 
-    QFile data(logPath());
+    QFile data(brain->logPath());
     if (data.open(QFile::WriteOnly | QIODevice::Append)) {
         QTextStream out(&data);
         out << text;
