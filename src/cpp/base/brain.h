@@ -2,6 +2,7 @@
 #include <QtCore>
 #include "storage.h"
 #include "core.h"
+#include "logger.h"
 
 class Brain : public QObject
 {
@@ -24,7 +25,8 @@ public:
     bool isPaused() const { return m_isPaused; }
     void setIsPaused(bool isPaused);
 
-    QString logDir() const { return Core::pathToDir(filePath) + "/log"; }
+    Q_INVOKABLE QString logDir() const { return Core::pathToDir(filePath) + "/log"; }
+    Q_INVOKABLE QString logPath() const { return Logger::Helper().logPath(); }
 
 signals:
     void isRunningChanged(bool isRunning);

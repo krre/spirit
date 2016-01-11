@@ -1,5 +1,4 @@
 #include "brain.h"
-#include "logger.h"
 
 void Brain::create(const QString& filePath)
 {

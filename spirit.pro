@@ -9,7 +9,8 @@ SOURCES += \
     src/cpp/base/settings.cpp \
     src/cpp/base/storage.cpp \
     src/cpp/base/brain.cpp \
-    src/cpp/base/logger.cpp
+    src/cpp/base/logger.cpp \
+    src/cpp/base/filewatcher.cpp
 
 RESOURCES += \
     src/spirit.qrc
@@ -51,4 +52,5 @@ HEADERS += \
     src/cpp/base/settings.h \
     src/cpp/base/storage.h \
     src/cpp/base/brain.h \
-    src/cpp/base/logger.h
+    src/cpp/base/logger.h \
+    src/cpp/base/filewatcher.h

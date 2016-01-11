@@ -4,6 +4,7 @@
 #include "base/core.h"
 #include "base/settings.h"
 #include "base/brain.h"
+#include "base/filewatcher.h"
 
 QPointer<Brain> brain;
 
@@ -12,6 +13,8 @@ int main(int argc, char* argv[])
     QApplication app(argc, argv);
     app.setApplicationName("Spirit");
     app.setApplicationVersion("0.1.0");
+
+    qmlRegisterType<FileWatcher>("Spirit", 1, 0, "FileWatcher");
 
     Core core;
     ::brain = new Brain;
