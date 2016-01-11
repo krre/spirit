@@ -29,8 +29,8 @@ void Brain::pause()
 
 void Brain::sendMessage(const QStringList& message)
 {
-    qDebug() << message;
     LOGGER() << "[RECEIVE] " << message;
+
     QStringList answer;
     answer << "I" << "receive" << "message";
     answered(answer);
@@ -44,9 +44,9 @@ void Brain::setIsRunning(const bool isRunning)
     isRunningChanged(isRunning);
 
     if (isRunning) {
-        qDebug() << "Brain started" << filePath;
+        LOGGER() << "Brain started";
     } else {
-        qDebug() << "Brain stopped" << filePath;
+        LOGGER() << "Brain stopped";
     }
 }
 
@@ -57,8 +57,8 @@ void Brain::setIsPaused(bool isPaused)
     emit isPausedChanged(isPaused);
 
     if (m_isPaused) {
-        qDebug() << "Brain paused" << filePath;
+        LOGGER() << "Brain paused";
     } else {
-        qDebug() << "Brain runned" << filePath;
+        LOGGER() << "Brain runned";
     }
 }
