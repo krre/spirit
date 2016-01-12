@@ -19,7 +19,7 @@ WindowDialog {
 
     function reloadLog() {
         textArea.remove(0, textArea.length)
-        var logList = Core.loadList(Brain.logPath())
+        var logList = Core.loadList(Brain.logPath)
         for (var i in logList) {
             textArea.append(logList[i])
         }
@@ -27,7 +27,7 @@ WindowDialog {
 
     FileWatcher {
         id: fileWatcher
-        filePath: Brain.logPath()
+        filePath: Brain.logPath
         onFileChanged: reloadLog()
     }
 

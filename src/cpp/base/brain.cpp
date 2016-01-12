@@ -8,6 +8,8 @@ void Brain::create(const QString& filePath)
 void Brain::start(const QString& filePath)
 {
     this->filePath = filePath;
+    m_logPath = logDir() + "/spirit-" + QDateTime::currentDateTimeUtc().toLocalTime().toString("yyyy-MM-dd") + ".log";
+    logPathChanged(m_logPath);
     setIsRunning(true);
 }
 
