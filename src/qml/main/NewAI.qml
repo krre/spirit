@@ -14,7 +14,7 @@ WindowDialog {
     onAccepted: {
         var dirPath = Settings.value("Path", "workspace") + "/" + name.text
         if (Core.isDirectoryExists(dirPath)) {
-            Dialog.errorMessage(qsTr(String("Directory %1 is exists").arg(dirPath)))
+            Dialog.error(qsTr(String("Directory %1 is exists").arg(dirPath)))
             stayOnScreen = true
         } else {
             Utils.createAI(dirPath)

@@ -29,11 +29,6 @@ DISTFILES += \
     src/qml/components/filedialog/FileDialogBase.qml \
     src/qml/components/filedialog/FileDialogDirectory.qml \
     src/qml/components/filedialog/FileDialogOpen.qml \
-    src/qml/components/messagedialog/MessageDialogBase.qml \
-    src/qml/components/messagedialog/MessageDialogError.qml \
-    src/qml/components/messagedialog/MessageDialogInformation.qml \
-    src/qml/components/messagedialog/MessageDialogQuestion.qml \
-    src/qml/components/messagedialog/MessageDialogWarning.qml \
     src/js/dialog.js \
     src/qml/main/WorkArea.qml \
     src/qml/console/Console.qml \
@@ -45,7 +40,8 @@ DISTFILES += \
     src/qml/console/sign/SignHuman.qml \
     src/qml/console/sign/SignSpirit.qml \
     src/qml/console/Personality.qml \
-    src/qml/main/Log.qml
+    src/qml/main/Log.qml \
+    src/qml/components/MessageDialogBase.qml
 
 HEADERS += \
     src/cpp/base/core.h \
